@@ -10,7 +10,7 @@ public class PlayerBlock : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(GetComponent<BlockMovement>().isMoving)
+		if(!GetComponent<BlockMovement>().isMoving)
 		{
 			if(Input.GetKey(KeyCode.UpArrow))
 			{
@@ -43,7 +43,6 @@ public class PlayerBlock : MonoBehaviour {
 			toCheck[0].GetComponent<BlockMovement>().isMoving = true;
 			toCheck[0].GetComponent<BlockMovement>().speed = dir;
 
-			Vector3 BlcPos = toCheck[0].transform.position;
 			Collider2D[] coll;
 
 			coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
@@ -54,11 +53,11 @@ public class PlayerBlock : MonoBehaviour {
 			}
 
 
-			toCheck[0].GetComponent<BlockMovement>().speed = dir;
-
 			hasChecked.Add(toCheck[0]);
 			toCheck.RemoveAt(0);
 		}
+
+		hasChecked.Clear();
 	}
 
 

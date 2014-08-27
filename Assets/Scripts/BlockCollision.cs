@@ -1,11 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BlockCollision : MonoBehaviour {
+
+	private List<GameObject> toCheck = new List<GameObject>();
+	private List<GameObject> hasChecked = new List<GameObject>();
 
 	void OnCollisionEnter2D()
 	{
 		Debug.Log("stop");
+
+
+		toCheck.Add(gameObject);
+		
+		while(toCheck.Count > 0)
+		{
+
+
+			Collider2D[] coll;
+			
+			coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
+			
+			foreach(Collider2D col in coll)
+			{
+				checkBlc(col.gameObject);
+			}
+			
+			
+			toCheck[0].GetComponent<BlockMovement>().speed = Vector2.zero;
+			toCheck[0].GetComponent<BlockMovement>().isMoving = false;
+			
+			hasChecked.Add(toCheck[0]);
+			toCheck.RemoveAt(0);
+		}
+		hasChecked.Clear();
+	}
+
+	private bool checkBlc(GameObject blck)
+	{
+		if(blck != null && (blck.tag == "SlimeStr" || blck.tag == "Player") && blck.GetComponent<BlockMovement>().isMoving )
+		{
+			
+			foreach(GameObject blk in toCheck)
+			{
+				if(blk == blck)
+				{	return false;	}
+			}
+			foreach(GameObject blk in hasChecked)
+			{
+				if(blk == blck)
+				{	return false;	}
+			}
+			
+			blck.GetComponent<BlockMovement>().isMoving = false;
+			toCheck.Add(blck);
+			return true;
+		}
+		
+		
+		
+		return false;
 	}
 	
 	// Update is called once per frame
