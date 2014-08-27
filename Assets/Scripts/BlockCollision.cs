@@ -3,13 +3,13 @@ using System.Collections;
 
 public class BlockCollision : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	void OnCollisionEnter2D()
+	{
+		Debug.Log("stuff");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }

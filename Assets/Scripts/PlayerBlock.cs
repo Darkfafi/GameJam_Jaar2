@@ -41,27 +41,15 @@ public class PlayerBlock : MonoBehaviour {
 			toCheck[0].GetComponent<BlockMovement>().speed = dir;
 
 			Vector3 BlcPos = toCheck[0].transform.position;
-			RaycastHit2D coll;
+			Collider2D[] coll;
 
-			//check left
-			coll = Physics2D.Raycast(BlcPos + new Vector3(-1,0,0),BlcPos + new Vector3(-1,0,0));
-			if(coll.collider != null)
-			{ checkBlc(coll.collider.gameObject); }
+			coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
 
-			//check right
-			coll = Physics2D.Raycast(BlcPos + new Vector3(1,0,0),BlcPos + new Vector3(1,0,0));
-			if(coll.collider != null)
-			{ checkBlc(coll.collider.gameObject); }
+			foreach(Collider2D col in coll)
+			{
+				checkBlc(col.gameObject);
+			}
 
-			//check up
-			coll = Physics2D.Raycast(BlcPos + new Vector3(0,1,0),BlcPos + new Vector3(0,1,0));
-			if(coll.collider != null)
-			{ checkBlc(coll.collider.gameObject); }
-
-			//check down
-			coll = Physics2D.Raycast(BlcPos + new Vector3(0,-1,0),BlcPos + new Vector3(0,-1,0));
-			if(coll.collider != null)
-			{ checkBlc(coll.collider.gameObject); }
 
 			toCheck[0].GetComponent<BlockMovement>().speed = dir;
 
@@ -74,7 +62,7 @@ public class PlayerBlock : MonoBehaviour {
 	//+++Needs to be turned to void+++
 	private bool checkBlc(GameObject blck)
 	{
-		if(blck != null && !blck.GetComponent<BlockMovement>().isMoving && (blck.tag == "SlimeStr" || blck.tag == "SlimeWek"))
+		if(blck != null && (blck.tag == "SlimeStr" || blck.tag == "SlimeWek") && !blck.GetComponent<BlockMovement>().isMoving )
 		{
 
 			foreach(GameObject blk in toCheck)
@@ -90,7 +78,6 @@ public class PlayerBlock : MonoBehaviour {
 			
 			blck.GetComponent<BlockMovement>().isMoving = true;
 			toCheck.Add(blck);
-			Debug.Log("Addcube");
 			return true;
 		}
 
