@@ -5,7 +5,7 @@ public class BlockCollision : MonoBehaviour {
 
 	void OnCollisionEnter2D()
 	{
-		Debug.Log("stuff");
+		Debug.Log("stop");
 	}
 	
 	// Update is called once per frame

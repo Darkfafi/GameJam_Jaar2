@@ -10,21 +10,24 @@ public class PlayerBlock : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.UpArrow))
+		if(GetComponent<BlockMovement>().isMoving)
 		{
-			move(new Vector2(0,maxSpeed));
-		}
-		else if(Input.GetKey(KeyCode.DownArrow))
-		{
-			move(new Vector2(0,-maxSpeed));
-		}
-		else if(Input.GetKey(KeyCode.LeftArrow))
-		{
-			move(new Vector2(-maxSpeed,0));
-		}
-		else if(Input.GetKey(KeyCode.RightArrow))
-		{
-			move(new Vector2(maxSpeed,0));
+			if(Input.GetKey(KeyCode.UpArrow))
+			{
+				move(new Vector2(0,maxSpeed));
+			}
+			else if(Input.GetKey(KeyCode.DownArrow))
+			{
+				move(new Vector2(0,-maxSpeed));
+			}
+			else if(Input.GetKey(KeyCode.LeftArrow))
+			{
+				move(new Vector2(-maxSpeed,0));
+			}
+			else if(Input.GetKey(KeyCode.RightArrow))
+			{
+				move(new Vector2(maxSpeed,0));
+			}
 		}
 	}
 
