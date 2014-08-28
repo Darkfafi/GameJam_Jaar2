@@ -8,56 +8,86 @@ public class PlayerBlock : MonoBehaviour {
 	private List<GameObject> hasChecked = new List<GameObject>();
 	public float maxSpeed;
 
+	private List<BlockMovement> allBlocks = new List<BlockMovement>();
+
+	void Start()
+	{
+		allBlocks.Add(GetComponent<BlockMovement>());
+		foreach(GameObject obj in GameObject.FindGameObjectsWithTag("SlimeWek"))
+		{
+			allBlocks.Add(obj.GetComponent<BlockMovement>());
+		}
+		foreach(GameObject obj in GameObject.FindGameObjectsWithTag("SlimeStr"))
+		{
+			allBlocks.Add(obj.GetComponent<BlockMovement>());
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if(!GetComponent<BlockMovement>().isMoving)
+
+
+		if(Input.GetKey(KeyCode.UpArrow))
 		{
-			if(Input.GetKey(KeyCode.UpArrow))
-			{
-				move(new Vector2(0,maxSpeed));
-			}
-			else if(Input.GetKey(KeyCode.DownArrow))
-			{
-				move(new Vector2(0,-maxSpeed));
-			}
-			else if(Input.GetKey(KeyCode.LeftArrow))
-			{
-				move(new Vector2(-maxSpeed,0));
-			}
-			else if(Input.GetKey(KeyCode.RightArrow))
-			{
-				move(new Vector2(maxSpeed,0));
-			}
+			move(new Vector2(0,maxSpeed));
+		}
+		else if(Input.GetKey(KeyCode.DownArrow))
+		{
+			move(new Vector2(0,-maxSpeed));
+		}
+		else if(Input.GetKey(KeyCode.LeftArrow))
+		{
+			move(new Vector2(-maxSpeed,0));
+		}
+		else if(Input.GetKey(KeyCode.RightArrow))
+		{
+			move(new Vector2(maxSpeed,0));
+		}
+
+		foreach(BlockMovement mve in allBlocks)
+		{
+			mve.move();
 		}
 	}
 
 	private void move(Vector2 dir)
 	{
 
-		toCheck.Add(gameObject);
-
-		while(toCheck.Count > 0)
+		bool canMove = true;
+		
+		foreach(BlockMovement mve in allBlocks)
 		{
-
-			
-			toCheck[0].GetComponent<BlockMovement>().isMoving = true;
-			toCheck[0].GetComponent<BlockMovement>().speed = dir;
-
-			Collider2D[] coll;
-
-			coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
-
-			foreach(Collider2D col in coll)
-			{
-				checkBlc(col.gameObject);
-			}
-
-
-			hasChecked.Add(toCheck[0]);
-			toCheck.RemoveAt(0);
+			if(mve.isMoving)
+			{  canMove = false;  }
 		}
 
-		hasChecked.Clear();
+		if(canMove)
+		{
+			toCheck.Add(gameObject);
+
+			while(toCheck.Count > 0)
+			{
+
+				
+				toCheck[0].GetComponent<BlockMovement>().isMoving = true;
+				toCheck[0].GetComponent<BlockMovement>().speed = dir;
+
+				Collider2D[] coll;
+
+				coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
+
+				foreach(Collider2D col in coll)
+				{
+					checkBlc(col.gameObject);
+				}
+
+
+				hasChecked.Add(toCheck[0]);
+				toCheck.RemoveAt(0);
+			}
+
+			hasChecked.Clear();
+		}
 	}
 
 

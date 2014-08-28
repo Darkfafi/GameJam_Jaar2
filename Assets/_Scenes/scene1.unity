@@ -103,7 +103,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 126530841}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &126530843
@@ -199,8 +199,8 @@ GameObject:
   - 114: {fileID: 454948948}
   - 50: {fileID: 454948949}
   m_Layer: 0
-  m_Name: CubeStrong
-  m_TagString: SlimeStr
+  m_Name: CubeWeak
+  m_TagString: SlimeWek
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 315a829a19bd2d549bc0d345064f7867, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -247,7 +247,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 454948942}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!33 &454948946
@@ -323,7 +323,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 658836565}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &658836567
@@ -459,7 +459,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1104156797}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1104156801
@@ -590,7 +590,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1110914325}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!33 &1110914330
@@ -633,7 +633,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -677,7 +677,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1594607362}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1594607365
@@ -747,6 +747,116 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!1 &1687471981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1687471988}
+  - 33: {fileID: 1687471987}
+  - 23: {fileID: 1687471986}
+  - 114: {fileID: 1687471985}
+  - 61: {fileID: 1687471984}
+  - 114: {fileID: 1687471983}
+  - 50: {fileID: 1687471982}
+  m_Layer: 0
+  m_Name: CubeStrong
+  m_TagString: SlimeStr
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1687471982
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &1687471983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5338d0eca71a0204c98c82b97fbf4def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1687471984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .899999976, y: .899999976}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1687471985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603caef9c3ec5ab4ab5b7c19535d6d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
+  isMoving: 0
+--- !u!23 &1687471986
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1687471987
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1687471988
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687471981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1940860769
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +992,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2017952213}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .899999976, y: .899999976}
   m_Center: {x: 0, y: 0}
 --- !u!114 &2017952217
