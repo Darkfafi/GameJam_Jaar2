@@ -6,6 +6,7 @@ public class StartScript : MonoBehaviour {
 	void OnMouseEnter(){
 		animation.Rewind ();
 		animation.Play ();
+		audio.Play ();
 	}
 
 	void OnMouseDown(){
