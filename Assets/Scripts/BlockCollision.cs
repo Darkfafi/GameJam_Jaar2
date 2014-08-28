@@ -7,10 +7,9 @@ public class BlockCollision : MonoBehaviour {
 	private List<GameObject> toCheck = new List<GameObject>();
 	private List<GameObject> hasChecked = new List<GameObject>();
 
-	void OnCollisionEnter2D()
+	void OnTriggerEnter2D()
 	{
-		Debug.Log("stop");
-
+		Debug.Log("C");
 
 		toCheck.Add(gameObject);
 		
@@ -28,8 +27,8 @@ public class BlockCollision : MonoBehaviour {
 			}
 			
 			
-			toCheck[0].GetComponent<BlockMovement>().speed = Vector2.zero;
-			toCheck[0].GetComponent<BlockMovement>().isMoving = false;
+			toCheck[0].GetComponent<BlockMovement>().stop();
+			toCheck[0].transform.position = new Vector3(Mathf.Round(toCheck[0].transform.position.x),Mathf.Round(toCheck[0].transform.position.y),Mathf.Round(toCheck[0].transform.position.z));
 			
 			hasChecked.Add(toCheck[0]);
 			toCheck.RemoveAt(0);
