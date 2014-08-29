@@ -15,9 +15,20 @@ public class BlockMovement : MonoBehaviour {
 		Collider2D[] allhits =  Physics2D.OverlapCircleAll(transform.position,0.45f);
 		if(allhits.Length > 1)
 		{
-			if(gameObject.tag == "Player" && allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal" )
+			if(gameObject.tag == "Player")
 			{
-				Application.LoadLevel(Application.loadedLevel + 1);
+				if(allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal")
+				{
+					Application.LoadLevel(Application.loadedLevel + 1);
+				}
+				else if(allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal")
+				{
+
+				}
+				else
+				{
+					GetComponent<BlockCollision>().colliding();
+				}
 			}
 			else
 			{
