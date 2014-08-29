@@ -9,11 +9,21 @@ public class BlockMovement : MonoBehaviour {
 	// Update is called once per frame
 	public void move () {
 		transform.Translate(speed);
-		if(Physics2D.OverlapCircleAll(transform.position,0.4f).Length > 1)
+	}
+	public void checkCollide()
+	{
+		Collider2D[] allhits =  Physics2D.OverlapCircleAll(transform.position,0.45f);
+		if(allhits.Length > 1)
 		{
-			Debug.Log("T");
+			if(gameObject.tag == "Player" && allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal" )
+			{
+				Application.LoadLevel(Application.loadedLevel + 1);
+			}
+			else
+			{
+				GetComponent<BlockCollision>().colliding();
+			}
 		}
-		
 	}
 
 	public void stop()

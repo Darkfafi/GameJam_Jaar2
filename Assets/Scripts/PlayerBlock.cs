@@ -27,26 +27,35 @@ public class PlayerBlock : MonoBehaviour {
 	void Update () {
 
 
-		if(Input.GetKey(KeyCode.UpArrow))
+		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			move(new Vector2(0,maxSpeed));
 		}
-		else if(Input.GetKey(KeyCode.DownArrow))
+		else if(Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			move(new Vector2(0,-maxSpeed));
 		}
-		else if(Input.GetKey(KeyCode.LeftArrow))
+		else if(Input.GetKeyDown(KeyCode.LeftArrow))
 		{
 			move(new Vector2(-maxSpeed,0));
 		}
-		else if(Input.GetKey(KeyCode.RightArrow))
+		else if(Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			move(new Vector2(maxSpeed,0));
 		}
+		else if(Input.GetKeyDown(KeyCode.R))
+		{
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
 
 		foreach(BlockMovement mve in allBlocks)
 		{
 			mve.move();
+		}
+		foreach(BlockMovement mve in allBlocks)
+		{
+			mve.checkCollide();
 		}
 	}
 
@@ -54,9 +63,7 @@ public class PlayerBlock : MonoBehaviour {
 	{
 
 		bool canMove = true;
-		
-		foreach(BlockMovement mve in allBlocks)
-		{
+		foreach(BlockMovement mve in allBlocks){
 			if(mve.isMoving)
 			{  canMove = false;  }
 		}
