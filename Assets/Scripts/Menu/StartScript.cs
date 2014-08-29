@@ -33,7 +33,7 @@ public class StartScript : MonoBehaviour {
 				rightBar.transform.Translate (new Vector2 (-speed, 0));
 			}
 			if(leftBar.transform.position.x > 0 && rightBar.transform.position.x < 0){
-				Application.LoadLevel("scene1");
+				Application.LoadLevel("testScene");
 			}
 		}
 	}
