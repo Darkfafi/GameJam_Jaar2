@@ -95,7 +95,7 @@ public class LevelCreator : MonoBehaviour {
 
 			}
 		}
-		
+		Destroy(gameObject);
 	}
 
 	XmlData loadXML() {
@@ -104,4 +104,6 @@ public class LevelCreator : MonoBehaviour {
 		XmlTextReader xmlReader = new XmlTextReader(xmlstring);
 		return serializer.Deserialize(xmlReader) as XmlData;
 	}
+
 }
+
