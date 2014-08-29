@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 public class LevelCreator : MonoBehaviour {
 	public Transform wall;
+	public Transform exit;
+
+	public int level;
 
 	[SerializeField]
 	private TextAsset xmlFile;
@@ -18,7 +21,7 @@ public class LevelCreator : MonoBehaviour {
 		xmldata = loadXML();
 		for(int i = 0; i < 12; i++)
 		{
-			string[] values = xmldata.levels[0].rows[i].rowString.Split(',');
+			string[] values = xmldata.levels[level].rows[i].rowString.Split(',');
 			int.Parse(values[0]);
 
 			for(int j = 0; j < values.Length; j++)
@@ -26,8 +29,11 @@ public class LevelCreator : MonoBehaviour {
 				switch(int.Parse(values[j]))
 				{
 				 case 1:
-					Debug.Log("place" + i);
-					Instantiate(wall,new Vector3(j * 1,i * 1,0),Quaternion.identity);
+					Instantiate(wall,new Vector3(j * 1,i * -1,0),Quaternion.identity);
+					break;
+
+				 case 2:
+					Instantiate(exit, new Vector3(j * 1,i * -1,0),Quaternion.identity);
 					break;
 
 	
