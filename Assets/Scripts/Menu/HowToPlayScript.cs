@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class HowToPlayScript : MonoBehaviour {
+	
+	public GameObject quitBut;
+	public GameObject startBut;
+	public GameObject helpScreen;
 
 	void OnMouseEnter(){
 		animation.Rewind ();
@@ -10,6 +14,9 @@ public class HowToPlayScript : MonoBehaviour {
 	}
 	
 	void OnMouseDown(){
-		Application.LoadLevel("HelpScreen");
+		Instantiate (helpScreen, new Vector3(0,0,-1), this.transform.rotation);
+		gameObject.collider2D.enabled = false;
+		startBut.collider2D.enabled = false;
+		quitBut.collider2D.enabled = false;
 	}   
 }
