@@ -7,26 +7,24 @@ public class BlockCollision : MonoBehaviour {
 	private List<GameObject> toCheck = new List<GameObject>();
 	private List<GameObject> hasChecked = new List<GameObject>();
 
-	void OnTriggerEnter2D()
+	public void colliding()
 	{
-		Debug.Log("C");
 
 		toCheck.Add(gameObject);
 		
 		while(toCheck.Count > 0)
 		{
 
-
-			Collider2D[] coll;
-			
-			coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
-			
-			foreach(Collider2D col in coll)
+			if(toCheck[0].tag != "SlimeWek")
 			{
-				checkBlc(col.gameObject);
+				Collider2D[] coll;
+				coll = Physics2D.OverlapCircleAll(toCheck[0].transform.position,0.7f);
+				foreach(Collider2D col in coll)
+				{
+					checkBlc(col.gameObject);
+				}
 			}
-			
-			
+
 			toCheck[0].GetComponent<BlockMovement>().stop();
 			toCheck[0].transform.position = new Vector3(Mathf.Round(toCheck[0].transform.position.x),Mathf.Round(toCheck[0].transform.position.y),Mathf.Round(toCheck[0].transform.position.z));
 			
@@ -61,9 +59,5 @@ public class BlockCollision : MonoBehaviour {
 		
 		return false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
 }
