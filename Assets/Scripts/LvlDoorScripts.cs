@@ -6,6 +6,7 @@ public class LvlDoorScripts : MonoBehaviour {
 	public Transform left;
 	public Transform right;
 	public bool closeNow = false;
+	public bool reset = false;
 	private bool openNow = true;
 	
 	// Update is called once per frame
@@ -16,7 +17,14 @@ public class LvlDoorScripts : MonoBehaviour {
 			right.Translate(new Vector2(-0.1f,0));
 			if(left.localPosition.x > -9.75)
 			{
-				Application.LoadLevel(Application.loadedLevel + 1);
+				if(reset)
+				{
+					Application.LoadLevel(Application.loadedLevel);
+				}
+				else
+				{
+					Application.LoadLevel(Application.loadedLevel + 1);
+				}
 			}
 		}
 		else if(openNow)
