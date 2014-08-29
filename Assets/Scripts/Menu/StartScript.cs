@@ -10,7 +10,7 @@ public class StartScript : MonoBehaviour {
 	public AudioClip doorSound;
 
 	float speed = 0.05f;
-	
+
 	void OnMouseEnter(){
 		animation.Rewind ();
 		animation.Play ();
@@ -21,6 +21,11 @@ public class StartScript : MonoBehaviour {
 		audio.clip = doorSound;
 		doorMove = true;
 		audio.Play ();
+
+		GameObject.FindGameObjectWithTag("HelpButton").collider2D.enabled = false;
+		GameObject.FindGameObjectWithTag("StartButton").collider2D.enabled = false;
+		GameObject.FindGameObjectWithTag("QuitButton").collider2D.enabled = false;
+
 		//Application.LoadLevel("scene1");
 	}
 

@@ -19,7 +19,7 @@ public class BlockMovement : MonoBehaviour {
 			{
 				if(allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal")
 				{
-					Application.LoadLevel(Application.loadedLevel + 1);
+					GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().closeNow = true;
 				}
 				else if(allhits[0].gameObject.tag == "DeathWall" || allhits[1].gameObject.tag == "DeathWall")
 				{

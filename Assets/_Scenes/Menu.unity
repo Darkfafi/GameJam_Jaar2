@@ -425,6 +425,10 @@ Prefab:
       propertyPath: m_HasTransformHierarchy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 86255f180fa3cc7458ec31a5f18a5a2a, type: 2}
+      propertyPath: m_TagString
+      value: StartButton
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 86255f180fa3cc7458ec31a5f18a5a2a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 86255f180fa3cc7458ec31a5f18a5a2a, type: 2}
@@ -883,7 +887,7 @@ GameObject:
   - 82: {fileID: 981244853}
   m_Layer: 0
   m_Name: HowToKnop
-  m_TagString: Untagged
+  m_TagString: HelpButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -929,6 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f0bda0ef8b0ef41bd1d05763617f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitBut: {fileID: 1445634056}
+  startBut: {fileID: 1570454368}
+  helpScreen: {fileID: 100002, guid: b74e3031c0f4355469a8e17ddf5760f8, type: 2}
 --- !u!61 &981244852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1428,7 +1435,7 @@ GameObject:
   - 82: {fileID: 1445634061}
   m_Layer: 0
   m_Name: knop quit
-  m_TagString: Untagged
+  m_TagString: QuitButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1628,6 +1635,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 3a61b3047335a4d45a7d96a1feae6187, type: 2}
+      propertyPath: m_TagString
+      value: QuitButton
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 3a61b3047335a4d45a7d96a1feae6187, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3a61b3047335a4d45a7d96a1feae6187, type: 2}
@@ -1699,7 +1710,7 @@ GameObject:
   - 82: {fileID: 1570454373}
   m_Layer: 0
   m_Name: knop start
-  m_TagString: Untagged
+  m_TagString: StartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
