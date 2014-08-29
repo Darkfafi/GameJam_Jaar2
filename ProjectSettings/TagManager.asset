@@ -7,9 +7,14 @@ TagManager:
   - SlimeStr
   - SlimeWek
   - Goal
-  - StartButton
-  - QuitButton
+  - DeathWall
+  - 
   - HelpButton
+  - QuitButton
+  - StartButton
+  - 
+  - 
+  - SideDoors
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
