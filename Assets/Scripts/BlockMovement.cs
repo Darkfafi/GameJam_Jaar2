@@ -21,9 +21,9 @@ public class BlockMovement : MonoBehaviour {
 				{
 					Application.LoadLevel(Application.loadedLevel + 1);
 				}
-				else if(allhits[0].gameObject.tag == "Goal" || allhits[1].gameObject.tag == "Goal")
+				else if(allhits[0].gameObject.tag == "DeathWall" || allhits[1].gameObject.tag == "DeathWall")
 				{
-
+					Application.LoadLevel(Application.loadedLevel);
 				}
 				else
 				{
