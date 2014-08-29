@@ -15,6 +15,7 @@ public class LevelCreator : MonoBehaviour {
 	private XmlData xmldata;
 
 	void Start(){
+		Instantiate(Resources.Load("Prefabs/LvlDoors"),new Vector3(Camera.main.transform.position.x,Camera.main.transform.position.y,0),Quaternion.identity);
 		xmldata = loadXML();
 		for(int i = 0; i < 13; i++)
 		{
