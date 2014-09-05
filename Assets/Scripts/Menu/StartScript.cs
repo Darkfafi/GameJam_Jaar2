@@ -9,7 +9,7 @@ public class StartScript : MonoBehaviour {
 	public GameObject rightBar;
 	public AudioClip doorSound;
 
-	float speed = 0.05f;
+	float speed = 6f;
 
 	void OnMouseEnter(){
 		animation.Rewind ();
@@ -32,10 +32,10 @@ public class StartScript : MonoBehaviour {
 	void Update(){
 		if (doorMove == true){
 			if (leftBar.transform.position.x < 0) {
-				leftBar.transform.Translate (new Vector2 (speed, 0));
+				leftBar.transform.Translate (new Vector2 (speed*Time.deltaTime, 0));
 			}
 			if (rightBar.transform.position.x > 0) {
-				rightBar.transform.Translate (new Vector2 (-speed, 0));
+				rightBar.transform.Translate (new Vector2 (-speed*Time.deltaTime, 0));
 			}
 			if(leftBar.transform.position.x > 0 && rightBar.transform.position.x < 0){
 				Application.LoadLevel(2);

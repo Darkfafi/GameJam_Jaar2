@@ -1,6 +1,11 @@
 fileFormatVersion: 2
 guid: 314ba63213c87f24693aed6b4ed151ee
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: how to play_0
+    21300002: how to play_1
+    21300004: how to play_2
+    21300006: how to play_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +40,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -54,6 +60,7 @@ TextureImporter:
         height: 29
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: how to play_1
       rect:
         serializedVersion: 2
@@ -63,6 +70,7 @@ TextureImporter:
         height: 25
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: how to play_2
       rect:
         serializedVersion: 2
@@ -72,6 +80,7 @@ TextureImporter:
         height: 27
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: how to play_3
       rect:
         serializedVersion: 2
@@ -81,5 +90,6 @@ TextureImporter:
         height: 27
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

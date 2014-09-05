@@ -8,7 +8,7 @@ public class BlockMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void move () {
-		transform.Translate(speed);
+		transform.Translate(speed * Time.deltaTime);
 	}
 	public void checkCollide()
 	{

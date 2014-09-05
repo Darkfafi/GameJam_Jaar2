@@ -26,29 +26,6 @@ public class PlayerBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		if(Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			move(new Vector2(0,maxSpeed));
-		}
-		else if(Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			move(new Vector2(0,-maxSpeed));
-		}
-		else if(Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			move(new Vector2(-maxSpeed,0));
-		}
-		else if(Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			move(new Vector2(maxSpeed,0));
-		}
-		else if(Input.GetKeyDown(KeyCode.R))
-		{
-			Application.LoadLevel(Application.loadedLevel);
-		}
-
-
 		foreach(BlockMovement mve in allBlocks)
 		{
 			mve.move();
@@ -59,7 +36,7 @@ public class PlayerBlock : MonoBehaviour {
 		}
 	}
 
-	private void move(Vector2 dir)
+	public void move(Vector2 dir)
 	{
 
 		bool canMove = true;
@@ -77,7 +54,7 @@ public class PlayerBlock : MonoBehaviour {
 
 				
 				toCheck[0].GetComponent<BlockMovement>().isMoving = true;
-				toCheck[0].GetComponent<BlockMovement>().speed = dir;
+				toCheck[0].GetComponent<BlockMovement>().speed = dir*maxSpeed;
 
 				Collider2D[] coll;
 
