@@ -69,7 +69,7 @@ public class InputControll : MonoBehaviour {
 							else
 							{
 								//swipe left
-								playerScript.move(new Vector2(1,0));
+								playerScript.move(new Vector2(-1,0));
 							}
 						}
 						else
