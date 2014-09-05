@@ -63,13 +63,13 @@ public class InputControll : MonoBehaviour {
 							//Horizontal swipe
 							if(touchDistance.x == Mathf.Abs(touchDistance.x))
 							{
-								//swipe up
-								playerScript.move(new Vector2(0,1));
+								//swipe right
+								playerScript.move(new Vector2(1,0));
 							}
 							else
 							{
-								//swipe down
-								playerScript.move(new Vector2(0,-1));
+								//swipe left
+								playerScript.move(new Vector2(1,0));
 							}
 						}
 						else
@@ -77,13 +77,13 @@ public class InputControll : MonoBehaviour {
 							//Vertical swipe
 							if(touchDistance.y == Mathf.Abs(touchDistance.y))
 							{
-								//swipe right
-								playerScript.move(new Vector2(1,0));
+								//swipe up
+								playerScript.move(new Vector2(0,1));
 							}
 							else
 							{
-								//swipe left
-								playerScript.move(new Vector2(-1,0));
+								//swipe down
+								playerScript.move(new Vector2(0,-1));
 							}
 						}
 					}
