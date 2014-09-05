@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InputControll : MonoBehaviour {
 
-	private int currentInputId;
+	private int currentInputId = -1;
 	private Vector3 startpos;
 	private float startTime;
 	private PlayerBlock playerScript;

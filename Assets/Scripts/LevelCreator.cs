@@ -7,7 +7,6 @@ using System.Collections.Generic;
 
 
 public class LevelCreator : MonoBehaviour {
-	public bool doorsOn;
 	public int level;
 
 	[SerializeField]
@@ -16,9 +15,7 @@ public class LevelCreator : MonoBehaviour {
 	private XmlData xmldata;
 
 	void Start(){
-		if(doorsOn){
-			Instantiate(Resources.Load("Prefabs/LvlDoors"),new Vector3(Camera.main.transform.position.x,Camera.main.transform.position.y,0),Quaternion.identity);
-		}
+		Instantiate(Resources.Load("Prefabs/LvlDoors"),new Vector3(Camera.main.transform.position.x,Camera.main.transform.position.y,0),Quaternion.identity);
 		xmldata = loadXML();
 		for(int i = 0; i < 13; i++)
 		{

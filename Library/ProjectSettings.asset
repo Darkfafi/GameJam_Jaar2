@@ -66,8 +66,11 @@ PlayerSettings:
     16:9: 1
     Others: 1
   iPhoneBundleIdentifier: com.Company.Mucus
+<<<<<<< HEAD
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
+=======
+>>>>>>> b40016becb6d9df16af73a2c158a507c2fd18a1c
   productGUID: 32e44d4be495e1c46affb8faaa619f61
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -212,7 +215,6 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenUseBackgroundColor: 0
   metroCapabilities: {}
-  metroUnprocessedPlugins: []
   metroCompilationOverrides: 1
   blackberryDeviceAddress: 
   blackberryDevicePassword: 
