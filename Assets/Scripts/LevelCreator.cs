@@ -20,7 +20,7 @@ public class LevelCreator : MonoBehaviour {
 		for(int i = 0; i < 13; i++)
 		{
 			string[] values = xmldata.levels[level].rows[i].rowString.Split(',');
-			int.Parse(values[0]);
+
 
 			for(int j = 0; j < values.Length; j++)
 			{

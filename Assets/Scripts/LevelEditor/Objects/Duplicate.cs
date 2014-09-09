@@ -2,15 +2,17 @@
 using System.Collections;
 
 public class Duplicate : MonoBehaviour {
-
 	void Update () {
-
-		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-		if(hit.collider !=null)
+		if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			Debug.Log("nice");
-		}
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast(ray.origin,ray.direction);
 
+			if(hit.collider !=null)
+			{
+				Debug.Log("prefab/" + hit.collider.name);
+				/*GameObject duplicate = */Instantiate(Resources.Load("Prefabs/" + hit.collider.name), new Vector2(0,0),Quaternion.identity);
+			}
+		}
 	}
 }
