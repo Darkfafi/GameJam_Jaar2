@@ -10,7 +10,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/HelpScreen.unity
   - enabled: 1
-    path: Assets/_Scenes/Tutorial.unity
+    path: Assets/_Scenes/Level0.unity
   - enabled: 1
     path: Assets/_Scenes/Level1.unity
   - enabled: 1
@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Level4.unity
   - enabled: 1
     path: Assets/_Scenes/EndScreen.unity
+  - enabled: 1
+    path: Assets/_Scenes/LevelSelect.unity

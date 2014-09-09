@@ -1,8 +1,6 @@
 fileFormatVersion: 2
 guid: f57cb1b3311442c47b4b133541a6003c
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Achtergrond glitch 1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,8 +35,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 160
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:

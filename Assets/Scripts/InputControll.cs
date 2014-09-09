@@ -16,16 +16,25 @@ public class InputControll : MonoBehaviour {
 
 	void Start()
 	{
-		playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBlock>();
+		if(GameObject.FindGameObjectWithTag("Player") == null)
+		{
+			this.enabled = false;
+		}
+		else
+		{
+			playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBlock>();
+			
+			if(SystemInfo.deviceType == DeviceType.Desktop)
+			{
+				inputCheck = desktopInputCheck;
+			}
+			else if(SystemInfo.deviceType == DeviceType.Handheld)
+			{
+				inputCheck = handHeldInputCheck;
+			}
+		}
 
-		if(SystemInfo.deviceType == DeviceType.Desktop)
-		{
-			inputCheck = desktopInputCheck;
-		}
-		else if(SystemInfo.deviceType == DeviceType.Handheld)
-		{
-			inputCheck = handHeldInputCheck;
-		}
+
 	}
 	
 	// Update is called once per frame
@@ -112,7 +121,8 @@ public class InputControll : MonoBehaviour {
 		}
 		else if(Input.GetKeyDown(KeyCode.R))
 		{
-			Application.LoadLevel(Application.loadedLevel);
+			GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().closeNow = true;
+			GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().reset = true;
 		}
 	}
 }
