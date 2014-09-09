@@ -243,6 +243,10 @@ Prefab:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b69c266f086c2574eae7a79f95803ff0, type: 2}
+      propertyPath: doorsOn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b69c266f086c2574eae7a79f95803ff0, type: 2}
   m_RootGameObject: {fileID: 666553093}
