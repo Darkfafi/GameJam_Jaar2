@@ -11,8 +11,7 @@ public class Duplicate : MonoBehaviour {
 			if(hit.collider !=null)
 			{
 				Debug.Log("prefab/" + hit.collider.name);
-				GameObject duplicate = Instantiate(Resources.Load("Prefabs/" + hit.collider.name), new Vector2(0,0),Quaternion.identity);
-				duplicate.AddComponent<
+				/*GameObject duplicate = */Instantiate(Resources.Load("Prefabs/" + hit.collider.name), new Vector2(0,0),Quaternion.identity);
 			}
 		}
 	}
