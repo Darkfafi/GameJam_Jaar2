@@ -9,6 +9,7 @@ public class LvlDoorScripts : MonoBehaviour {
 	public bool reset = false;
 	private bool openNow = true;
 	public ButtonRotate[] uiButtons;
+	public string lvlOverRide;
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +24,12 @@ public class LvlDoorScripts : MonoBehaviour {
 			right.Translate(new Vector2(-6*Time.deltaTime,0));
 			if(left.localPosition.x > -9.75)
 			{
-				if(reset)
+				Debug.Log(lvlOverRide);
+				if(lvlOverRide != "")
+				{
+					Application.LoadLevel(lvlOverRide);
+				}
+				else if(reset)
 				{
 					Application.LoadLevel(Application.loadedLevel);
 				}

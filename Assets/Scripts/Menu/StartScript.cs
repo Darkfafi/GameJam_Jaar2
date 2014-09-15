@@ -19,27 +19,12 @@ public class StartScript : MonoBehaviour {
 
 	void OnMouseDown(){
 		audio.clip = doorSound;
-		doorMove = true;
+		GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().lvlOverRide = "LevelSelect";
+		GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().closeNow = true;
 		audio.Play ();
 
 		GameObject.FindGameObjectWithTag("HelpButton").collider2D.enabled = false;
 		GameObject.FindGameObjectWithTag("StartButton").collider2D.enabled = false;
 		GameObject.FindGameObjectWithTag("QuitButton").collider2D.enabled = false;
-
-		//Application.LoadLevel("scene1");
-	}
-
-	void Update(){
-		if (doorMove == true){
-			if (leftBar.transform.position.x < 0) {
-				leftBar.transform.Translate (new Vector2 (speed*Time.deltaTime, 0));
-			}
-			if (rightBar.transform.position.x > 0) {
-				rightBar.transform.Translate (new Vector2 (-speed*Time.deltaTime, 0));
-			}
-			if(leftBar.transform.position.x > 0 && rightBar.transform.position.x < 0){
-				Application.LoadLevel(2);
-			}
-		}
 	}
 }
