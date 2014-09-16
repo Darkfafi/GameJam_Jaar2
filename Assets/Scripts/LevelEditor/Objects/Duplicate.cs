@@ -2,17 +2,16 @@
 using System.Collections;
 
 public class Duplicate : MonoBehaviour {
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.Mouse0))
-		{
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(ray.origin,ray.direction);
+	private Vector3 mousePos;
 
-			if(hit.collider !=null)
-			{
-				Debug.Log("prefab/" + hit.collider.name);
-				/*GameObject duplicate = */Instantiate(Resources.Load("Prefabs/" + hit.collider.name), new Vector2(0,0),Quaternion.identity);
-			}
-		}
+	void OnMouseDown(){
+
+		mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,0));
+		mousePos.x = 0;
+		mousePos.y = 0;
+		Debug.Log("prefab/" + gameObject.name);
+		GameObject duplicate = Instantiate(Resources.Load("Prefabs/" + gameObject.name), new Vector2(mousePos.x,mousePos.y),Quaternion.identity) as GameObject;
+		duplicate.AddComponent<MoveObject>();
+		duplicate.GetComponent<SpriteRenderer>().sortingOrder = 3;
 	}
 }
