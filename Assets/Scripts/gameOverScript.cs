@@ -8,6 +8,7 @@ public class gameOverScript : MonoBehaviour {
 	}
 
 	void BackToMenu(){
-		Application.LoadLevel("Menu");
+		GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().closeNow = true;
+		GameObject.FindGameObjectWithTag("SideDoors").GetComponent<LvlDoorScripts>().lvlOverRide = "Menu";
 	}
 }

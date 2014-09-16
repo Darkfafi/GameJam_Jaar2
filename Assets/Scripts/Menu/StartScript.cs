@@ -3,13 +3,9 @@ using System.Collections;
 
 public class StartScript : MonoBehaviour {
 
-	bool doorMove = false;
-
 	public GameObject leftBar;
 	public GameObject rightBar;
 	public AudioClip doorSound;
-
-	float speed = 6f;
 
 	void OnMouseEnter(){
 		animation.Rewind ();
